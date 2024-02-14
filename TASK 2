@@ -1,0 +1,43 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class StudentGrade {
+    public static void main(String args[]){
+        Scanner sc =new Scanner(System.in);
+        int total=0,rollno;
+        int[] m = new int[6];
+        ArrayList<Integer> al=new ArrayList<>();
+        float avg;
+        String name,grade;
+        System.out.println("NAME :");
+        name=sc.nextLine();
+        System.out.println("ROLL NO :");
+        rollno= sc.nextInt();
+        for (int i = 1; i < 6; i++) {
+            System.out.println("Enter subject "+i+"'s mark :");
+             m[i]=sc.nextInt();
+            total+=m[i];
+        }
+        avg=total/5;
+        if(avg==100){grade="O";}
+        else if(avg>=90 && avg<99){
+            grade="A+";
+        } else if (avg>=80 && avg<90) {
+            grade="A";
+        } else if (avg>=70 && avg<80) {
+            grade="B+";
+        } else if (avg>=60 && avg<70) {
+            grade="B";
+        } else if (avg>=50 && avg<60) {
+            grade="C";
+        }else {
+            grade="FAIL";
+        }
+        System.out.println("STUDENT DETAILS");
+        System.out.println("NAME    :"+name);
+        System.out.println("ROLL NO :"+rollno);
+        System.out.println("TOTAL   :"+total);
+        System.out.println("AVERAGE :"+avg);
+        System.out.println("GRADE   :"+grade);
+    }
+}
