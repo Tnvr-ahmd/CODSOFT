@@ -1,0 +1,31 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class GuessNumber {
+    public static void main(String args[]){
+        Scanner sc =new Scanner(System.in);
+        int n1,n2,l,h,counter=0;
+        Random r=new Random();
+        n2=r.nextInt(1000);
+        System.out.println("ONLY 3 ATTEMPTS");
+        for (int i = 0; i <3; i++) {
+        System.out.println("enter a number to guess");
+        n1=sc.nextInt();
+
+        l=n2-100;
+        h=n2+100;
+        if (n1==n2){
+            System.out.println("GUESSED NUMBER IS CORRECT!!!");
+            counter++;
+        } else if ( n1<l){
+            System.out.println("TOO LOW!!!");
+
+        } else if (n1>h) {
+            System.out.println("TOO HIGH!!!");
+        } else {
+            System.out.println("GUESSED NUMBER IS WRONG  :(");
+        }
+        }
+        System.out.println("YOUR SCORE IS "+counter);
+    }
+}
